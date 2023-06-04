@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GifsService } from '../../services/gifs.service';
 
 @Component({
   selector: 'gifs-home-page',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+
+  constructor(private gifsService: GifsService) { }
+
+  get gifs() {
+    return this.gifsService.gifList;
+  }
 
 }
